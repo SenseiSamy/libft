@@ -6,7 +6,7 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:53:28 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/11 14:34:57 by snaji            ###   ########.fr       */
+/*   Updated: 2022/11/14 15:16:44 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,26 @@ static int	get_size(char const	*s, char c)
 		++i;
 	}
 	return (count);
+}
+
+static char	**verif(char **result, int j)
+{
+	int	i;
+	int	fail;
+
+	i = 0;
+	fail = 0;
+	while (i < j)
+		if (!result[i++])
+			fail = 1;
+	if (fail == 0)
+		return (result);
+	i = 0;
+	while (i < j)
+		if (result[i++])
+			free(result[i - 1]);
+	free(result);
+	return (NULL);
 }
 
 static char	*malloc_and_cpy(char const *s, char c)
@@ -72,5 +92,5 @@ char	**ft_split(char const *s, char c)
 		++i;
 	}
 	result[j] = NULL;
-	return (result);
+	return (verif(result, j));
 }
