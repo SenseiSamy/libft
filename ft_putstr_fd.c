@@ -6,11 +6,12 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:53:24 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/12 17:13:03 by snaji            ###   ########.fr       */
+/*   Updated: 2022/11/14 14:58:13 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {
