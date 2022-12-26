@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 22:09:54 by snaji             #+#    #+#             */
-/*   Updated: 2022/12/26 16:02:57 by snaji            ###   ########.fr       */
+/*   Created: 2022/12/26 15:59:41 by snaji             #+#    #+#             */
+/*   Updated: 2022/12/26 16:00:31 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "ft_char.h"
-# include "ft_strings.h"
-# include "ft_memory.h"
-# include "ft_output.h"
-# include "ft_list.h"
-# include "ft_math.h"
-# include "get_next_line.h"
-
-#endif
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}

@@ -1,26 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 22:09:54 by snaji             #+#    #+#             */
-/*   Updated: 2022/12/26 16:02:57 by snaji            ###   ########.fr       */
+/*   Created: 2022/12/26 16:01:51 by snaji             #+#    #+#             */
+/*   Updated: 2022/12/26 16:02:39 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdarg.h>
-# include "ft_char.h"
-# include "ft_strings.h"
-# include "ft_memory.h"
-# include "ft_output.h"
-# include "ft_list.h"
-# include "ft_math.h"
-# include "get_next_line.h"
+#ifndef FT_MATH_H
+# define FT_MATH_H
 
+int	ft_abs(int n);
 #endif
