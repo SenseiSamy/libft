@@ -6,18 +6,11 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 19:39:19 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/18 01:45:17 by snaji            ###   ########.fr       */
+/*   Updated: 2023/01/21 11:52:47 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/libft.h"
-
-static int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
 
 static int	get_size(int n)
 {
