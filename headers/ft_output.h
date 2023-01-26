@@ -6,13 +6,14 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 01:28:18 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/19 16:22:14 by snaji            ###   ########.fr       */
+/*   Updated: 2023/01/26 17:51:06 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_OUTPUT_H
 # define FT_OUTPUT_H
 
+int		ft_fprintf(int fd, const char *format, ...);
 int		ft_printf(const char *s, ...);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);

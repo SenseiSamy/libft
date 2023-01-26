@@ -6,7 +6,7 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:39:03 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/19 16:36:42 by snaji            ###   ########.fr       */
+/*   Updated: 2023/01/26 17:51:21 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@ int	ft_printf(const char *format, ...)
 
 	va_start(args, format);
 	count = ft_vdprintf(1, format, args);
+	va_end(args);
+	return (count);
+}
+
+int	ft_fprintf(int fd, const char *format, ...)
+{
+	int		count;
+	va_list	args;
+
+	va_start(args, format);
+	count = ft_vdprintf(fd, format, args);
 	va_end(args);
 	return (count);
 }
