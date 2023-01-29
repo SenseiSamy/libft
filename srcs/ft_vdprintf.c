@@ -6,7 +6,7 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/13 16:36:43 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/18 01:34:04 by snaji            ###   ########.fr       */
+/*   Updated: 2023/01/29 01:00:46 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ int	ft_vdprintf(int fd, const char *format, va_list ap)
 		else if (format[i] == '%')
 			return (-1);
 		else
-			count += ft_printf_c(format[i], 1);
+			count += ft_printf_c(format[i], fd);
 		++i;
 	}
 	return (count);
