@@ -6,7 +6,7 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:35:10 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/26 01:05:31 by snaji            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:39:34 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_fd	*get_fd(int fd, t_fd **list_fd);
 char	*build_line(t_line **line, int buf_count);
 void	remove_line_from_buf(t_fd *fd);
 void	remove_fd(int fd, t_fd **liste_fd);
+void	remove_all_fds(t_fd **list_fd);
 void	free_line(t_line **line);
 size_t	eol_pos(char *s);
 #endif

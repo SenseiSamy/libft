@@ -6,7 +6,7 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 15:54:03 by snaji             #+#    #+#             */
-/*   Updated: 2022/11/26 01:13:51 by snaji            ###   ########.fr       */
+/*   Updated: 2023/01/31 17:40:11 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*get_next_line(int fd)
 	t_fd		*current_fd;
 	int			buf_count;
 
-	if (fd < 0 || BUFFER_SIZE < 0)
+	if (fd < -1 || BUFFER_SIZE < 0)
 		return (NULL);
+	if (fd == -1)
+		return (remove_all_fds(&list_fd), NULL);
 	current_fd = get_fd(fd, &list_fd);
 	if (!current_fd)
 		return (NULL);
@@ -110,4 +112,10 @@ t_line	*get_one(t_fd *fd, ssize_t *ret, int *buf_count)
 	line_el->buf[*ret] = '\0';
 	++*buf_count;
 	return (line_el);
+}
+
+void	remove_all_fds(t_fd **list_fd)
+{
+	while (*list_fd)
+		remove_fd((*list_fd)->fd, list_fd);
 }
