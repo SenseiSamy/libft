@@ -1,32 +1,82 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rc
-RM = rm -rf
-MKDIR = mkdir -p
 
-SRCSDIR = srcs/
-OBJSDIR = objs/
 INCLUDE = headers/
-SRCS = $(addprefix $(SRCSDIR), ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memset.c ft_memmove.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c ft_strchr.c ft_strdup.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c ft_printf_c.c ft_printf_di.c ft_printf_p.c ft_printf_s.c ft_printf_u.c ft_printf_x.c ft_vdprintf.c ft_printf.c get_next_line_utils.c get_next_line.c ft_abs.c ft_free_split.c)
-OBJS = $(addprefix $(OBJSDIR), $(notdir $(SRCS:.c=.o)))
+SRCS = 	srcs/ctype/ft_isalnum.c \
+		srcs/ctype/ft_isalpha.c \
+		srcs/ctype/ft_isascii.c \
+		srcs/ctype/ft_isdigit.c \
+		srcs/ctype/ft_isprint.c \
+		srcs/ctype/ft_tolower.c \
+		srcs/ctype/ft_toupper.c \
+		srcs/list/ft_lstadd_back.c \
+		srcs/list/ft_lstadd_front.c \
+		srcs/list/ft_lstclear.c \
+		srcs/list/ft_lstdelone.c \
+		srcs/list/ft_lstiter.c \
+		srcs/list/ft_lstlast.c \
+		srcs/list/ft_lstmap.c \
+		srcs/list/ft_lstnew.c \
+		srcs/list/ft_lstsize.c \
+		srcs/stdio/ft_printf.c \
+		srcs/stdio/ft_printf_c.c \
+		srcs/stdio/ft_printf_di.c \
+		srcs/stdio/ft_printf_p.c \
+		srcs/stdio/ft_printf_s.c \
+		srcs/stdio/ft_printf_u.c \
+		srcs/stdio/ft_printf_x.c \
+		srcs/stdio/ft_vdprintf.c \
+		srcs/stdlib/ft_abs.c \
+		srcs/stdlib/ft_atoi.c \
+		srcs/stdlib/ft_calloc.c \
+		srcs/stdlib/ft_itoa.c \
+		srcs/string/ft_bzero.c \
+		srcs/string/ft_memchr.c \
+		srcs/string/ft_memcmp.c \
+		srcs/string/ft_memcpy.c \
+		srcs/string/ft_memmove.c \
+		srcs/string/ft_memset.c \
+		srcs/string/ft_strchr.c \
+		srcs/string/ft_strdup.c \
+		srcs/string/ft_strlcat.c \
+		srcs/string/ft_strlcpy.c \
+		srcs/string/ft_strlen.c \
+		srcs/string/ft_strncmp.c \
+		srcs/string/ft_strnstr.c \
+		srcs/string/ft_strrchr.c \
+		srcs/utils/ft_free_split.c \
+		srcs/utils/ft_putchar_fd.c \
+		srcs/utils/ft_putendl_fd.c \
+		srcs/utils/ft_putnbr_fd.c \
+		srcs/utils/ft_putstr_fd.c \
+		srcs/utils/ft_split.c \
+		srcs/utils/ft_striteri.c \
+		srcs/utils/ft_strjoin.c \
+		srcs/utils/ft_strmapi.c \
+		srcs/utils/ft_strtrim.c \
+		srcs/utils/ft_substr.c \
+		srcs/utils/get_next_line.c \
+		srcs/utils/get_next_line_utils.c
+OBJS = $(patsubst srcs/%.c, bin/%.o, $(SRCS))
 NAME = libft.a
 
 all: $(NAME)
 
 objsdir:
-	$(MKDIR) $(OBJSDIR)
+	@mkdir -p bin
 
-$(OBJSDIR)%.o: $(SRCSDIR)%.c | objsdir
+bin/%.o: srcs/%.c | objsdir
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c -I $(INCLUDE) -o $@ $^
 
 $(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
+	ar rc $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJSDIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
