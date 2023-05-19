@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_split.c                                    :+:      :+:    :+:   */
+/*   ft_freearray.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 14:51:12 by snaji             #+#    #+#             */
-/*   Updated: 2023/05/18 21:50:16 by snaji            ###   ########.fr       */
+/*   Created: 2023/05/19 22:43:47 by snaji             #+#    #+#             */
+/*   Updated: 2023/05/19 22:47:56 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_free_split(char **split)
+void	ft_freearray(void **array)
 {
-	size_t	i;
+	int	i;
 
-	if (!split)
-		return ;
 	i = 0;
-	while (split[i])
-		free(split[i++]);
-	free(split);
+	while (array[i] != NULL)
+		free(array[i++]);
+	free(array);
 }

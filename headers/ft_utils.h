@@ -6,7 +6,7 @@
 /*   By: snaji <snaji@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 21:48:59 by snaji             #+#    #+#             */
-/*   Updated: 2023/05/19 13:53:20 by snaji            ###   ########.fr       */
+/*   Updated: 2023/05/19 22:47:28 by snaji            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-void	ft_free_split(char **split);
+void	ft_freearray(void **array);
 void	ft_multfree(int nb_arg, ...);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);

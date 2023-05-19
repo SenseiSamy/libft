@@ -44,7 +44,7 @@ SRCS = 	srcs/ctype/ft_isalnum.c \
 		srcs/string/ft_strncmp.c \
 		srcs/string/ft_strnstr.c \
 		srcs/string/ft_strrchr.c \
-		srcs/utils/ft_free_split.c \
+		srcs/utils/ft_freearray.c \
 		srcs/utils/ft_multfree.c \
 		srcs/utils/ft_putchar_fd.c \
 		srcs/utils/ft_putendl_fd.c \
