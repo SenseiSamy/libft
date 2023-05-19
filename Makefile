@@ -53,6 +53,7 @@ SRCS = 	srcs/ctype/ft_isalnum.c \
 		srcs/utils/ft_striteri.c \
 		srcs/utils/ft_strjoin.c \
 		srcs/utils/ft_strmapi.c \
+		srcs/utils/ft_strmjoin.c \
 		srcs/utils/ft_strtrim.c \
 		srcs/utils/ft_substr.c \
 		srcs/utils/get_next_line.c \
@@ -73,11 +74,12 @@ $(NAME): $(OBJS)
 	ar rc $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJSDIR)
+	rm -rf bin
 
 fclean: clean
 	rm -rf $(NAME)
 
-re: fclean all
+re: fclean
+	make all
 
 .PHONY: all clean fclean re
